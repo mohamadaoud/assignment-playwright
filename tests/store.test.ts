@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { StorePage } from '../pages/storePage';
+import { StorePage } from '../pages/StorePage';
 
 test.use({ storageState: 'auth/consumer.json' })
 
