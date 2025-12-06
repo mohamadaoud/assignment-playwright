@@ -1,5 +1,7 @@
 import { Page, Locator, expect } from '@playwright/test';
 
+const url = "https://hoff.is/login/";
+
 // Answer from ChatGPT
 export class LoginPage {
   readonly page: Page;
@@ -17,7 +19,7 @@ export class LoginPage {
   }
 
   async goto() {
-    await this.page.goto('https://hoff.is/login/');
+    await this.page.goto(url);
     await expect(this.username).toBeVisible();
   }
 

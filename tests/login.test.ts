@@ -1,17 +1,15 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/loginPage';
 
-let password: string;
+const password = process.env.STORE_PASSWORD ?? 'sup3rs3cr3t';
 
 test('consumer can log in successfully', async ({ page }) => {
     const login = new LoginPage(page);
     await login.goto();
 
-    if (process.env.STORE_PASSWORD !== undefined) {
-	    password = process.env.STORE_PASSWORD;
-}
+    //sup3rs3cr3t',
+    await login.login('markus', password,'consumer');
 
-    await login.login('markus', password, 'consumer');
 
     await expect(page).toHaveURL(/\/store/i);
 });
