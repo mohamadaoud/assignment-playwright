@@ -7,7 +7,6 @@ test('consumer can log in successfully', async ({ page }) => {
     const login = new LoginPage(page);
     await login.goto();
 
-    //sup3rs3cr3t',
     await login.login('markus', password,'consumer');
 
 
